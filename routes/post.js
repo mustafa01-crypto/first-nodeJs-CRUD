@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
-
 const router = express.Router();
 
 const PostModel = mongoose.model('PostMethod', new mongoose.Schema({
@@ -11,7 +10,7 @@ const PostModel = mongoose.model('PostMethod', new mongoose.Schema({
 
 }));
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
     const students = await PostModel.find();
     res.send(students);
 });
