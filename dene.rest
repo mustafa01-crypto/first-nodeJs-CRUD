@@ -1,0 +1,8 @@
+POST http://localhost:3000/post
+
+
+{
+    "name":"Lale",
+    "surname":"Scale",
+    "number":"1234676"
+}
