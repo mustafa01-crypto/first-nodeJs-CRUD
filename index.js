@@ -6,7 +6,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const error = require('./middleware/error')
 const app = express();
-require('./startup/prod')(app);
+//require('./startup/prod')(app);
 require('dotenv').config();
 ;
 app.use(bodyParser.urlencoded({extended: false}))
