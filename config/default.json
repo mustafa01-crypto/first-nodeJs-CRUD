@@ -1,0 +1,4 @@
+{
+    "mongoUrl":"mongodb+srv://mustafa12:titankamon12@cluster0.lsyhq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "db":"mongodb/localhost/vidly"
+}
