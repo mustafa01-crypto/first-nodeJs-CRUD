@@ -7,12 +7,15 @@ const bodyParser = require('body-parser');
 const error = require('./middleware/error')
 const app = express();
 require('./startup/prod')(app);
-const dotenv = require('dotenv');
-dotenv.config();
+require('dotenv').config();
+;
 app.use(bodyParser.urlencoded({extended: false}))
 
-mongoose.connect('mongodb://localhost/vidly')
-  .then(() => console.log('Connected to MongoDB...'))
+
+
+
+mongoose.connect("mongodb+srv://mustafa12:HF8IsHbY3LnOTBtt@cluster0.lsyhq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+  .then(() => console.log('Connected to Heroku MongoDB...'))
   .catch(err => console.error('Could not connect to MongoDB...'));
 
 app.use(express.json());

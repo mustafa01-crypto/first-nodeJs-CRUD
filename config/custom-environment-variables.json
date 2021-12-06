@@ -1,4 +1,4 @@
 {
-    "mongoUrl":"",
+    "MONGODB_URI":"",
     "db":""
 }
