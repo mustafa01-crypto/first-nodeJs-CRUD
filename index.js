@@ -6,12 +6,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const error = require('./middleware/error')
 const app = express();
-//require('./startup/prod')(app);
+
 require('dotenv').config();
 ;
 app.use(bodyParser.urlencoded({extended: false}))
-
-
 
 
 mongoose.connect("mongodb+srv://mustafa12:HF8IsHbY3LnOTBtt@cluster0.lsyhq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
@@ -21,6 +19,7 @@ mongoose.connect("mongodb+srv://mustafa12:HF8IsHbY3LnOTBtt@cluster0.lsyhq.mongod
 app.use(express.json());
 app.use('/api/students', students);
 app.use('/post', post);
+
 
 app.use(error)
 

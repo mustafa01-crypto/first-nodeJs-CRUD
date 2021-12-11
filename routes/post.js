@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 
+
 const PostModel = mongoose.model('PostMethod', new mongoose.Schema({
     name: String,
     surname: String,
@@ -15,14 +16,17 @@ router.get('/', async (req, res, next) => {
     res.send(students);
 });
 
-router.post('/', async (req, res) => {
-
+router.post('/', async (req, res,next) => {
+    console.log(req.file,req.body);
     const students = new PostModel({
         name: req.body.name, surname: req.body.surname, number: req.body.number
     })
     const student = await students.save();
     res.send(student);
+    next();
 })
+
+
 
 router.put('/:id', async (req, res) => {
     const students = await PostModel.findByIdAndUpdate(req.params.id,
